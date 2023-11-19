@@ -1,6 +1,6 @@
 
 # Use a base Python image
-FROM python:3.9
+FROM python:3.7-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Specify the command to run the application
-CMD ["python", "login.py"]
+CMD ["python", "login2.py"]
 
 
 
