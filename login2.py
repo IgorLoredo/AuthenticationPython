@@ -49,8 +49,12 @@ def login():
 
 @app.route('/api/logout', methods=['POST'])
 def logout():
-    logout_user()
-    return jsonify({'message': 'Logged out'}), 200
+    if current_user.is_authenticated:
+        username = current_user.id
+        logout_user()
+        return f"Usuário {username} deslogado com sucesso", 200
+    else:
+        return "Nenhum usuário está logado", 400
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0', port=5000)
