@@ -13,4 +13,9 @@
         <input type="submit" value="Login">
     </form>
 </body>
-</html> 
+</html>
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"username":"username_value","password":"password_value"}' http://localhost:5000/register
+
+curl -X POST -H "Content-Type: application/json" -d '{"username":"username_value","password":"password_value"}' http://localhost:5001/api/login

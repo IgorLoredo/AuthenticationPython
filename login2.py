@@ -2,8 +2,12 @@ from flask import Flask, request, jsonify
 from flask_login import current_user
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_cors import CORS
+
+
 
 app = Flask(__name__)
+CORS(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'your-secret-key'
