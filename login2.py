@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-app.config['SECRET_KEY'] = 'your-secret-key'
+app.config['SECRET_KEY'] = 'key'
 
 class User(UserMixin):
     def __init__(self, id):
